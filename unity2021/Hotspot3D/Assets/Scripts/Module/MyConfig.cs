@@ -49,6 +49,11 @@ namespace XTC.FMP.MOD.Hotspot3D.LIB.Unity
             [XmlAttribute("invert")]
             public bool invert { get; set; } = false;
         }
+        public class SpaceGrid
+        {
+            [XmlElement("Position")]
+            public Position position { get; set; } = new Position();
+        }
 
         public class RenderCamera
         {
@@ -63,6 +68,8 @@ namespace XTC.FMP.MOD.Hotspot3D.LIB.Unity
             [XmlAttribute("name")]
             public string name { get; set; } = "";
 
+            [XmlElement("SpaceGrid")]
+            public SpaceGrid spaceGrid { get; set; } = new SpaceGrid();
             [XmlElement("RenderCamera")]
             public RenderCamera renderCamera { get; set; } = new RenderCamera();
             [XmlElement("PitchAxis")]

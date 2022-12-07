@@ -16,6 +16,8 @@
   <GRPC address="https://localhost:19000"/>
   <!-- 样式列表
       name: 名称
+      SpaceGrid: 空间网格，用于定位instace中的world对象
+      SpaceGrid.Position: 位置
       RenderCamera: 渲染摄像机
       RenderCamera.Position: 位置
       RenderCamera.Rotation: 旋转
@@ -30,6 +32,9 @@
     -->
   <Styles>
     <Style name="default">
+      <SpaceGrid>
+        <Position x="0" y="10000" z="0"/>
+      </SpaceGrid>
       <RenderCamera>
         <Position x="0" y="2" z="-4"/>
         <Rotation x="26" y="0" z="0"/>

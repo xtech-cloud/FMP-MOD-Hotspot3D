@@ -51,6 +51,8 @@ namespace XTC.FMP.MOD.Hotspot3D.LIB.Unity
             contentReader_.AssetRootPath = settings_["path.assets"].AsString();
             contentReader_.ContentUri = "";
 
+            rootUI.transform.Find("bg").gameObject.SetActive(false);
+
             uiReference_.renderer = rootUI.transform.Find("renderer").GetComponent<RawImage>();
             worldReference_.camera = rootWorld.transform.Find("camera").GetComponent<Camera>();
             worldReference_.slot = rootWorld.transform.Find("[slot]");
@@ -87,19 +89,26 @@ namespace XTC.FMP.MOD.Hotspot3D.LIB.Unity
         /// </remarks>
         public void HandleOpened(string _source, string _uri)
         {
-            rootUI.gameObject.SetActive(true);
-            rootWorld.gameObject.SetActive(true);
+            rootWorld.transform.localPosition = new Vector3(
+                style_.spaceGrid.position.x,
+                style_.spaceGrid.position.y,
+                style_.spaceGrid.position.z
+                );
 
             worldReference_.camera.transform.localPosition = new Vector3(
                 style_.renderCamera.position.x,
                 style_.renderCamera.position.y,
                 style_.renderCamera.position.z
                 );
+
             worldReference_.camera.transform.localEulerAngles = new Vector3(
                 style_.renderCamera.rotation.x,
                 style_.renderCamera.rotation.y,
                 style_.renderCamera.rotation.z
                 );
+
+            rootUI.gameObject.SetActive(true);
+            rootWorld.gameObject.SetActive(true);
             applyCatalog();
         }
 
