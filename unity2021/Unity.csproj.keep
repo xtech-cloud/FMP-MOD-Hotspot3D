@@ -81,6 +81,15 @@
     <Reference Include="UnityEngine.TextRenderingModule">
       <HintPath>{{UNITY_HOME}}\Editor\Data\Managed\UnityEngine\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>{{UNITY_HOME}}\Editor\Data\Managed\UnityEngine\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>{{UNITY_HOME}}\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyTouchPlugin">
+      <HintPath>{{WORK_DIR}}\Hotspot3D\Assets\3rd\EasyTouch-5.0.17\EasyTouchPlugin.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
