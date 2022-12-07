@@ -1,0 +1,11 @@
+{
+    "foreign_bundle_uuid": "XTC.Hotspot2D",
+    "alias": "琼海",
+    "title": "琼海",
+    "topic": "海南省",
+    "caption": "热带海滨风景特色的国际旅游城市",
+    "description": "琼海，海南省管辖县级市 。位于海南省东部，万泉河中下游，北距海口市78公里，南距万宁市60公里，三亚市163公里，西连定安、屯昌县，东濒文昌清澜港。",
+    "kvS":{
+        "ImageAtlas3D": "_resources/a.ia3"
+    }
+}

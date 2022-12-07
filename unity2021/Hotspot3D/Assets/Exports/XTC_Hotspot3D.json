@@ -1,0 +1,43 @@
+{
+  "sectionS": [
+    {
+      "name": "三亚",
+      "path": "",
+      "instanceS": [ "default" ],
+      "contentS": [
+        "XTC.Hotspot3D/三亚"
+      ],
+      "kvS": {
+        "x": "0",
+        "y": "0.2",
+        "z": "0"
+      }
+    },
+    {
+      "name": "琼海",
+      "path": "",
+      "instanceS": [ "default" ],
+      "contentS": [
+        "XTC.Hotspot3D/琼海"
+      ],
+      "kvS": {
+        "x": "2",
+        "y": "0",
+        "z": "2"
+      }
+    },
+    {
+      "name": "昌江",
+      "path": "",
+      "instanceS": [ "default" ],
+      "contentS": [
+        "XTC.Hotspot3D/昌江"
+      ],
+      "kvS": {
+        "x": "-1",
+        "y": "0",
+        "z": "-1"
+      }
+    }
+  ]
+}

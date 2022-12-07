@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MyConfig version="1.0">
+  <!-- UI 
+      visible: 预加载完成后是否显示
+      slot: ui根节点在主Canvas中的挂载路径
+    -->
+  <UI visible="true" slot="[root]"/>
+  <!-- World
+      visible: 预加载完成后是否显示
+      slot: world根节点的挂载路径
+    -->
+  <World visible="true" slot="[root]"/>
+  <!-- 远程过程调用
+      address: 地址
+    -->
+  <GRPC address="https://localhost:19000"/>
+  <!-- 样式列表
+      name: 名称
+      RenderCamera: 渲染摄像机
+      RenderCamera.Position: 位置
+      RenderCamera.Rotation: 旋转
+      PitchAxis: 仰俯角对应的轴
+      PitchAxis.rangeMin: 最小角度
+      PitchAxis.rangeMax: 最大角度
+      PitchAxis.invert: 是否反转
+      YawAxis: 偏转角对应的轴
+      YawAxis.rangeMin: 最小角度
+      YawAxis.rangeMax: 最大角度
+      YawAxis.invert: 是否反转
+    -->
+  <Styles>
+    <Style name="default">
+      <RenderCamera>
+        <Position x="0" y="2" z="-4"/>
+        <Rotation x="26" y="0" z="0"/>
+      </RenderCamera>
+      <PitchAxis invert="false" rangeMin="-30" rangeMax="30"/>
+      <YawAxis invert="false" rangeMin="-30" rangeMax="30"/>
+      <!-- 热点
+        key: 内容的键值对的键
+			-->
+      <Hotspot key="ImageAtlas3D">
+        <OnSubjects>
+          <Subject message="/XTC/ImageAtlas3D/Open">
+            <Parameters>
+              <Parameter key="uid" value="default" type="string"/>
+              <Parameter key="source" value="assloud://" type="string"/>
+              <Parameter key="uri" value="{{uri}}" type="string"/>
+              <Parameter key="delay" value="0" type="float"/>
+            </Parameters>
+          </Subject>
+        </OnSubjects>
+        <OffSubjects>
+          <Subject message="/XTC/ImageAtlas3D/Close">
+            <Parameters>
+              <Parameter key="uid" value="default" type="string"/>
+              <Parameter key="delay" value="0" type="float"/>
+            </Parameters>
+          </Subject>
+        </OffSubjects>
+      </Hotspot>
+    </Style>
+  </Styles>
+  <!-- 预创建的实例列表
+      uid: 实例的唯一ID
+      style: 使用的样式名
+      uiSlot: UI挂载的路径
+      worldSlot: World挂载的路径
+    -->
+  <Instances>
+    <Instance uid="default" style="default" uiSlot="" worldSlot=""/>
+  </Instances>
+  <!-- 预加载 -->
+  <Preload>
+    <!-- 消息订阅的主题
+          message: 消息
+          Parameter.key: 参数的键
+          Parameter.value: 参数的值
+          Parameter.type: 参数的类型，支持的类型为string,int,float,bool
+        -->
+    <Subjects>
+      <Subject message="/XTC/Hotspot3D/Open">
+        <Parameters>
+          <Parameter key="uid" value="default" type="string"/>
+          <Parameter key="source" value="" type="string"/>
+          <Parameter key="uri" value="" type="string"/>
+          <Parameter key="delay" value="0" type="float"/>
+        </Parameters>
+      </Subject>
+    </Subjects>
+  </Preload>
+</MyConfig>

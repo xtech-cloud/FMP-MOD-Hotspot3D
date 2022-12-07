@@ -1,0 +1,19 @@
+
+/_dist_/
+/_build_/
+/Hotspot3D/Assets/TextMesh Pro/
+/Hotspot3D/Assets/TextMesh Pro.meta
+/Hotspot3D/Assets/Plugins/
+/Hotspot3D/Assets/Plugins.meta
+/Hotspot3D/Assets/3rd/
+/Hotspot3D/Assets/3rd.meta
+/Hotspot3D/Library/
+/Hotspot3D/obj/
+/Hotspot3D/Logs/
+/Hotspot3D/Temp/
+/Hotspot3D/UserSettings/
+/Hotspot3D/*.sln
+/Hotspot3D/*.csproj
+/Hotspot3D/.vsconfig
+/Hotspot3D/.vs/
+/.UNITY_HOME.env

@@ -1,0 +1,11 @@
+{
+    "foreign_bundle_uuid": "XTC.Hotspot2D",
+    "alias": "昌江",
+    "title": "昌江",
+    "topic": "海南省",
+    "caption": "热带海滨风景特色的国际旅游城市",
+    "description": "昌江，长江流域鄱阳湖支流饶河的支流。因流经安徽省昌门（后称祁门）而名昌江、阊江，上游也有南宁河之称 ，下游鄱阳县俗名北河或镇河 ，旧志载：“入鄱阳界者为鄱江，在浮梁者为昌江”。",
+    "kvS":{
+        "ImageAtlas3D": "_resources/a.ia3"
+    }
+}
