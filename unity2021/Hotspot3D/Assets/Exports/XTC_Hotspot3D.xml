@@ -29,6 +29,11 @@
       YawAxis.rangeMin: 最小角度
       YawAxis.rangeMax: 最大角度
       YawAxis.invert: 是否反转
+      Hotspot: 热点
+      Hotspot.key: 内容的键值对的键
+      Hotspot.DebugBox: 用于调试的包围盒
+      Hotspot.DebugBox.visible: 是否可见
+      Hotspot.DebugBox.color: 颜色的RGBA值
     -->
   <Styles>
     <Style name="default">
@@ -41,10 +46,8 @@
       </RenderCamera>
       <PitchAxis invert="false" rangeMin="-30" rangeMax="30"/>
       <YawAxis invert="false" rangeMin="-30" rangeMax="30"/>
-      <!-- 热点
-        key: 内容的键值对的键
-			-->
       <Hotspot key="ImageAtlas3D">
+        <DebugBox visible ="true" color="#FF000088"/>
         <OnSubjects>
           <Subject message="/XTC/ImageAtlas3D/Open">
             <Parameters>

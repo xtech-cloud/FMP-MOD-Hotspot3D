@@ -8,9 +8,12 @@
         "XTC.Hotspot3D/三亚"
       ],
       "kvS": {
-        "x": "0",
-        "y": "0.2",
-        "z": "0"
+        "positionX": "0",
+        "positionY": "0.2",
+        "positionZ": "0",
+        "scaleX": "1",
+        "scaleY": "1",
+        "scaleZ": "1"
       }
     },
     {
@@ -21,9 +24,12 @@
         "XTC.Hotspot3D/琼海"
       ],
       "kvS": {
-        "x": "2",
-        "y": "0",
-        "z": "2"
+        "positionX": "2",
+        "positionY": "0",
+        "positionZ": "2",
+        "scaleX": "2",
+        "scaleY": "2",
+        "scaleZ": "2"
       }
     },
     {
@@ -34,9 +40,12 @@
         "XTC.Hotspot3D/昌江"
       ],
       "kvS": {
-        "x": "-1",
-        "y": "0",
-        "z": "-1"
+        "positionX": "-1",
+        "positionY": "0",
+        "positionZ": "-1",
+        "scaleX": "0.1",
+        "scaleY": "0.3",
+        "scaleZ": "0.2"
       }
     }
   ]

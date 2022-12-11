@@ -28,11 +28,20 @@ namespace XTC.FMP.MOD.Hotspot3D.LIB.Unity
             public float z { get; set; } = 0;
         }
 
+        public class DebugBox
+        {
+            [XmlAttribute("visible")]
+            public bool visible { get; set; } = false;
+            [XmlAttribute("color")]
+            public string color { get; set; } = "#FFFF0088";
+        }
+
         public class Hotspot
         {
             [XmlAttribute("key")]
             public string key { get; set; } = "";
-
+            [XmlElement("DebugBox")]
+            public DebugBox debugBox { get; set; } = new DebugBox();
             [XmlArray("OnSubjects"), XmlArrayItem("Subject")]
             public Subject[] onSubjectS = new Subject[0];
 

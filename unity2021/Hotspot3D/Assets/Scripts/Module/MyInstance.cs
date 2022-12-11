@@ -9,6 +9,7 @@ using UnityEngine.EventSystems;
 using System.Linq;
 using System.IO;
 using Newtonsoft.Json;
+using System;
 
 namespace XTC.FMP.MOD.Hotspot3D.LIB.Unity
 {
@@ -59,6 +60,7 @@ namespace XTC.FMP.MOD.Hotspot3D.LIB.Unity
             worldReference_.hotspot = rootWorld.transform.Find("[slot]/hotspot");
             worldReference_.hotspot.gameObject.AddComponent<HotspotClickHandler>();
             worldReference_.hotspot.gameObject.SetActive(false);
+            worldReference_.hotspot.GetComponent<MeshRenderer>().enabled = style_.hotspot.debugBox.visible;
 
             int renderTextureWidth = (int)uiReference_.renderer.rectTransform.rect.width;
             int renderTextureHeight = (int)uiReference_.renderer.rectTransform.rect.height;
@@ -69,6 +71,15 @@ namespace XTC.FMP.MOD.Hotspot3D.LIB.Unity
 
             var clickHandler = uiReference_.renderer.gameObject.AddComponent<RendererPointerClickHandler>();
             clickHandler.OnClick = onRendererClick;
+
+            Func<string, Color> convertColor = (_color) =>
+            {
+                Color color = Color.white;
+                if (!ColorUtility.TryParseHtmlString(_color, out color))
+                    color = Color.white;
+                return color;
+            };
+            worldReference_.hotspot.GetComponent<MeshRenderer>().material.color = convertColor(style_.hotspot.debugBox.color);
 
             //添加手势事件
             wrapGesture();
@@ -128,22 +139,35 @@ namespace XTC.FMP.MOD.Hotspot3D.LIB.Unity
                 var clone = GameObject.Instantiate(worldReference_.hotspot.gameObject, worldReference_.hotspot.transform.parent);
                 clone.SetActive(true);
 
-                string strX = "0";
-                section.kvS.TryGetValue("x", out strX);
-                float x = 0;
-                float.TryParse(strX, out x);
+                string strPositionX = "0";
+                section.kvS.TryGetValue("positionX", out strPositionX);
+                float positionX = 0;
+                float.TryParse(strPositionX, out positionX);
+                string strPositionY = "0";
+                section.kvS.TryGetValue("positionY", out strPositionY);
+                float positionY = 0;
+                float.TryParse(strPositionY, out positionY);
+                string strPositionZ = "0";
+                section.kvS.TryGetValue("positionZ", out strPositionZ);
+                float positionZ = 0;
+                float.TryParse(strPositionZ, out positionZ);
 
-                string strY = "0";
-                section.kvS.TryGetValue("y", out strY);
-                float y = 0;
-                float.TryParse(strY, out y);
+                clone.transform.localPosition = new Vector3(positionX, positionY, positionZ);
 
-                string strZ = "0";
-                section.kvS.TryGetValue("z", out strZ);
-                float z = 0;
-                float.TryParse(strZ, out z);
+                string strScaleX = "1";
+                section.kvS.TryGetValue("scaleX", out strScaleX);
+                float scaleX = 0;
+                float.TryParse(strScaleX, out scaleX);
+                string strScaleY = "1";
+                section.kvS.TryGetValue("scaleY", out strScaleY);
+                float scaleY = 0;
+                float.TryParse(strScaleY, out scaleY);
+                string strScaleZ = "1";
+                section.kvS.TryGetValue("scaleZ", out strScaleZ);
+                float scaleZ = 0;
+                float.TryParse(strScaleZ, out scaleZ);
 
-                clone.transform.localPosition = new Vector3(x, y, z);
+                clone.transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
 
                 clone.GetComponent<HotspotClickHandler>().OnClick = () =>
                 {
